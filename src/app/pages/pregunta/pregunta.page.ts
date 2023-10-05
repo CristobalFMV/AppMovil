@@ -14,23 +14,26 @@ export class PreguntaPage implements OnInit {
   public respuesta: string = '';
   
   constructor(
-    private activeroute: ActivatedRoute,
-    private router: Router)
+    private activeroute: ActivatedRoute
+  , private router: Router) {
 
-  {this.usuario = new Usuario('', '', '', '', '', '',); 
-  
+this.activeroute.queryParams.subscribe(params => {      
+  if(this.router.getCurrentNavigation().extras.state){
+    this.usuario = this.router.getCurrentNavigation().extras.state.usuario;
+  }else{
+    this.router.navigate(['/login']);
   }
-
-  public ValidarRespuesta(): void{    
-    if (this.usuario.respuestaSecreta === this.respuesta) {      
-      alert ('Su contraseña es ' + this.usuario.password);
-    }
-    else{
-      alert('Respuesta incorreta');
+});
+  }
+  public validarRespuesta():void{
+    if(this.usuario.respuestaSecreta===this.respuesta){
+      alert('Correcto tu clave es: ' + this.usuario.password)
+    }else{
+      alert('Incorrecto')
     }
   }
 
   ngOnInit() {
   }
 
-}
+  }

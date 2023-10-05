@@ -67,6 +67,7 @@ export class LoginPage implements OnInit {
 
     if(!this.validarUsuario(this.usuario)) {
       return;
+      
     }
 
 
@@ -99,6 +100,11 @@ export class LoginPage implements OnInit {
     Usaremos validateModel para verificar que se cumplan las
     validaciones de los campos del formulario
   */
+  public IngresarPaginaValidarCorreo(): void{
+    this.router.navigate(['/correo'])
+  }
+
+
   public validarUsuario(usuario: Usuario): boolean {
 
 

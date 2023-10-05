@@ -8,9 +8,9 @@
 </ion-toolbar>
 
 <ion-content>  
-  <ion-label class="label"> {{ this.usuario.preguntaSecreta }} </ion-label>      
-  <ion-input type="text" [(ngModel)]="respuesta" placeholder="ingrese la respuesta" class="input"></ion-input>
-  <ion-button class="boton">
-    <a (click)="ValidarRespuesta()">Recuperar contraseña</a>
-  </ion-button>
+  <ion-card>
+    <ion-card-subtitle>Ingresa tu respuesta: </ion-card-subtitle>
+    <ion-input type="text" [(ngModel)]="respuesta" placeholder="Ingresa tu correo"></ion-input>
+    <a (click)="validarRespuesta()">Recupera tu contraseña</a>
+  </ion-card>
 </ion-content>
