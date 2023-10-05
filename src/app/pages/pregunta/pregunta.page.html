@@ -1,0 +1,16 @@
+<ion-toolbar color="primary">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="auto"><a [routerLink]="'/login'"><ion-icon name="arrow-back-outline" class="flecha"></ion-icon></a> </ion-col>
+      <ion-col><ion-title class="titulo">Responda la pregunta secreta</ion-title></ion-col>
+    </ion-row>
+  </ion-grid>    
+</ion-toolbar>
+
+<ion-content>  
+  <ion-label class="label"> {{ this.usuario.preguntaSecreta }} </ion-label>      
+  <ion-input type="text" [(ngModel)]="respuesta" placeholder="ingrese la respuesta" class="input"></ion-input>
+  <ion-button class="boton">
+    <a (click)="ValidarRespuesta()">Recuperar contraseña</a>
+  </ion-button>
+</ion-content>

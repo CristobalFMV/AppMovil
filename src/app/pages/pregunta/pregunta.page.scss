@@ -1,0 +1,40 @@
+.flecha{ 
+    width:50px;
+    height: 50px;
+}
+
+.titulo{
+    font-style: unset;
+    font-size: 27px;
+    position: relative;
+    left: 15px;
+}
+
+.label{
+    display: block;
+    margin: 30px 0px 15px 10px;
+    font-size: 20px;
+    color: black;
+}
+
+.input {
+    margin: 10px;
+    width: 95%;
+    padding: 10px;
+    font-style: oblique;    
+    border: solid 2px rgb(104, 104, 104);
+    border-radius: 15px;
+}
+
+.boton {
+    width: 55%;
+    display: block;
+    margin: 40px 0px 0px 0px;
+    font-size: 18px;    
+    position: relative;
+    left: 40%;
+}
+
+a{
+    color: white;
+}
