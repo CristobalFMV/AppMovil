@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="dark" class="ion-text-center">
+    <ion-title>Escaneo de QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-button color="warning" *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full"  shape="round">
+    <ion-icon slot="end" name="videocam-outline"></ion-icon>
+    Comenzar Escaneo de QR
+  </ion-button>
+
+  <ion-button color="warning" class="boton-escaneo" *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="round">
+    <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+    Detener escaneo de QR
+  </ion-button>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Los datos del Código QR son los siguientes:</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="borde">
+      <h2 *ngIf="datosQR">
+        {{ datosQR }}
+      </h2>
+      <h2 *ngIf="!datosQR">
+        Sin información
+      </h2>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

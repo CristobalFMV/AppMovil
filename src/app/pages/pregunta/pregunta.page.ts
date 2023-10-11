@@ -17,19 +17,21 @@ export class PreguntaPage implements OnInit {
     private activeroute: ActivatedRoute
   , private router: Router) {
 
-this.activeroute.queryParams.subscribe(params => {      
-  if(this.router.getCurrentNavigation().extras.state){
-    this.usuario = this.router.getCurrentNavigation().extras.state.usuario;
-  }else{
-    this.router.navigate(['/login']);
+  this.activeroute.queryParams.subscribe(params => {      
+    if(this.router.getCurrentNavigation().extras.state){
+      this.usuario = this.router.getCurrentNavigation().extras.state.usuario;
+      } else {
+        this.router.navigate(['/qr']);
+      }
+    });
   }
-});
-  }
+
   public validarRespuesta():void{
     if(this.usuario.respuestaSecreta===this.respuesta){
-      alert('Correcto tu clave es: ' + this.usuario.password)
+      //navigationextras
+      this.router.navigate(['/correcto']);
     }else{
-      alert('Incorrecto')
+      this.router.navigate(['/incorrecto']);
     }
   }
 

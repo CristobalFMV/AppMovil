@@ -7,10 +7,14 @@
   </ion-grid>    
 </ion-toolbar>
 
+<div>
+  {{ usuario.preguntaSecreta }}
+</div>
+
 <ion-content>  
   <ion-card>
     <ion-card-subtitle>Ingresa tu respuesta: </ion-card-subtitle>
     <ion-input type="text" [(ngModel)]="respuesta" placeholder="Ingresa tu correo"></ion-input>
-    <a (click)="validarRespuesta()">Recupera tu contraseña</a>
+    <ion-button (click)="validarRespuesta()">Recupera tu contraseña</ion-button>
   </ion-card>
 </ion-content>

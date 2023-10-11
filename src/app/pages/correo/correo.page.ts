@@ -15,6 +15,7 @@ export class CorreoPage implements OnInit {
 
   ngOnInit() {
   }
+
   public IngresarPaginaValidarRespuesta(): void{
     const usuario = new Usuario('','','','','','');
     const usuarioEncontrado = usuario.buscarUsuarioValidoCorreo(this.correo);
@@ -27,7 +28,7 @@ export class CorreoPage implements OnInit {
         usuario: usuarioEncontrado
         }
       };
-    this.router.navigate(['/respuesta'], navigationExtras);
+    this.router.navigate(['/pregunta'], navigationExtras);
   }
     }
 }

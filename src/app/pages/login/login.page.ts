@@ -92,7 +92,7 @@ export class LoginPage implements OnInit {
       }
     };
     // Navegamos hacia el Home y enviamos la información extra
-    this.router.navigate(['/home'], navigationExtras);
+    this.router.navigate(['/qr'], navigationExtras);
   }
 
 

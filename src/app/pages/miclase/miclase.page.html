@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="back">
+  <img src="assets/img/Logo-Duoc.png" alt="Imagen de encabezado" class="imagen-encabezado">
+  <ion-title class="titulo">Sistema de Asistencia DUOC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-button *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full" shape="round">
+    <ion-icon slot="start" name="videocam-outline"></ion-icon>
+    Comenzar Escaneo de QR
+  </ion-button>
+
+  <ion-button *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="round">
+    <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+    Detener escaneo de QR
+  </ion-button>
+
+  <ion-button (click)="limpiarDatos()" expand="block" expand="full" shape="round">
+    <ion-icon slot="start" name="trash-outline"></ion-icon>
+    Limpiar datos
+  </ion-button>
+
+  <video #video [hidden]="!escaneando" width="100%"></video>
+  <canvas #canvas hidden></canvas>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Datos de la Asignatura</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <br>
+      
+<table>
+  <tr>
+    <td class="ancho_columna_titulos">Bloque de Inicio</td>
+    <td>{{bloqueInicio}}</td>
+  <tr>
+  <tr>
+    <td>Bloque de Término</td>
+    <td>{{bloqueTermino}}</td>
+  <tr>
+  <tr>
+    <td>Día</td>
+    <td>{{dia}}</td>
+  <tr>
+  <tr>
+    <td>Hora de Fin</td>
+    <td>{{horaFin}}</td>
+  <tr>
+  <tr>
+    <td>Hora de Inicio</td>
+    <td>{{horaInicio}}</td>
+  <tr>
+  <tr>
+    <td>Sigla</td>
+    <td>{{idAsignatura}}</td>
+  <tr>
+  <tr>
+    <td>Nombre de Asignatura</td>
+    <td>{{nombreAsignatura}}</td>
+  <tr>
+  <tr>
+    <td>Nombredel Profesor</td>
+    <td>{{nombreProfesor}}</td>
+  <tr>
+  <tr>
+    <td>Sección</td>
+    <td>{{seccion}}</td>
+  <tr>
+  <tr>
+    <td>Sede</td>
+    <td>{{sede}}</td>
+  <tr>
+</table>
+
+      <br><br>
+      Escaneando: {{ escaneando }}
+      <br>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>
+
